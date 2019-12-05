@@ -5,9 +5,8 @@ def is_Valid_Code(code):
     valid = True    # Initialise variable to determine if code is valid (default as valid)
 
     for digit in code:   # Loop through the code
-        if int(digit) < previous:    # If current number is less than previous number if code then set code to be false
-            valid = False
-            break
+        if int(digit) < previous:    # If current number is less than previous number if code then return False
+            return False
         elif code.count(digit) == 2:    # Check if number if code has 2 occurrences and update flag if found
             two_occurrences = True
         previous = int(digit)
